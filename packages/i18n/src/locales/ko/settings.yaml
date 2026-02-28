@@ -1,74 +1,74 @@
 common:
-  save: Save
+  save: 저장
 animations:
   stage-transitions:
-    title: Disable Stage Transitions
+    title: 스테이지 전환 비활성화
   use-page-specific-transitions:
     description: >-
-      Some pages will have their own transitions, this will override the stage transitions
-    title: Use Page Specific Transitions
+      일부 페이지에는 자체 전환이 있으며, 이는 스테이지 전환을 재정의합니다
+    title: 페이지별 전환 사용
 dialogs:
   onboarding:
-    title: Welcome to AIRI!
-    description: Let's set up your first AI provider to get started.
-    selectProvider: Choose an AI Provider
-    configureProvider: Configure {provider}
-    apiKey: API Key
-    apiKeyHelp: Get your API key from {provider} and paste it here
-    baseUrl: Base URL
-    baseUrlHelp: API endpoint URL (use default if unsure)
-    accountId: Account ID
-    validationSuccess: Configuration validation success
-    validationFailed: Configuration validation failed
-    validationError: 'Validation error: {error}'
-    skipForNow: Skip for now
-    saveAndContinue: Save and Continue
-    next: Next
-    retry: Retry
-    start: Let's do it!
-    select-model: Choose model
-    no-models: No available models
+    title: AIRI에 오신 것을 환영합니다!
+    description: 당신의 첫 번째 AI 제공자를 시작하도록 설정해 보겠습니다.
+    selectProvider: AI 제공자를 선택해주세요
+    configureProvider: '{provider} 구성'
+    apiKey: API 키
+    apiKeyHelp: '{provider}으로부터 API 키를 받아온 다음 붙여넣으세요'
+    baseUrl: 기본 URL
+    baseUrlHelp: API 엔드포인트 URL(확실하지 않은 경우 기본값 사용)
+    accountId: 계정 ID
+    validationSuccess: 구성 검증 성
+    validationFailed: 구성 검증 실패
+    validationError: '검증 오류: {error}'
+    skipForNow: 건너뛰기
+    saveAndContinue: 저장 및 계속
+    next: 다음
+    retry: 다시 시도
+    start: 그럼 시작합시다!
+    select-model: 모델 선택
+    no-models: 사용 가능한 모델 없음
     no-models-help: >-
-      Please return to the previous step and check your API key, or check the network connection.
+      이전 단계로 돌아가서 API 키를 확인하거나 네트워크 연결을 확인해 주세요.
 language:
-  title: Language
+  title: 언어
   description: >
-    Change the language of the AIRI interface. This will not affect the language of the character's responses.
+    AIRI의 인터페이스의 언어를 바꿉니다. 다만 캐릭터의 응답 언어는 변경되지 않습니다.
 controls-island:
   icon-size:
-    title: Controls Island Icon Size
-    description: Adjust the size of the controls island icons
-    auto: Auto (responsive)
-    large: Large (default)
-    small: Small
+    title: 컨트롤 아일랜드 아이콘 크기
+    description: 컨트롤 아일랜드 아이콘 크기 조정
+    auto: 자동 (능동적)
+    large: 크게 (기본값)
+    small: 작게
 live2d:
   change-model:
-    from-file: Load from File
-    from-file-select: Select
-    from-url: Load from URL
-    from-url-confirm: Load
-    from-url-placeholder: Enter Live2D model URL
-    title: Change Model
+    from-file: 파일로부터 불러오기
+    from-file-select: 선택
+    from-url: URL으로부터 불러오기
+    from-url-confirm: 불러오기
+    from-url-placeholder: Live2D 모델 URL 입력
+    title: 모델 변경
   edit-motion-map:
-    title: Edit motion map
+    title: 모션 맵 편집
   map-motions:
-    play: Play Motion
-    title: Map Motions
-  title: Live2D Settings
+    play: 모션 재생
+    title: 모션 맵
+  title: Live2D 설정
   scale-and-position:
-    title: Scale And Position
-    scale: Scale
-    x: X
-    'y': 'Y'
+    title: 크기 및 위치
+    scale: 크기
+    x: X 좌표
+    'y': 'Y 좌표'
   switch-to-vrm:
-    title: Switch to 3D Avatar?
-    change-to-vrm: Click here to switch to the 3D avatar setting (VRM)
+    title: 3D 아바타로 전환하시겠습니까?
+    change-to-vrm: 3D 아바타 설정(VRM)으로 전환하려면 여기를 클릭하세요
   theme-color-from-model:
-    title: Extract colors from model
+    title: 모델로부터 색상 추출
     button-extract:
-      title: Extract
+      title: 추출
   focus:
-    title: Disable model mouse tracking
+    title: 마우스 포인터 추적 비활성화
     button-disable:
       title: Disable
   fps:

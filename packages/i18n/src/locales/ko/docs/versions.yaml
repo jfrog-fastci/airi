@@ -1,9 +1,9 @@
 download-buttons:
-  latest-stable: Latest Stable Release
-  latest-prerelease: Latest Pre-release
-  latest-nightly: Latest Nightly Build
-  download: Download
-  view-release: View Release
+  latest-stable: 최신 안정 빌드
+  latest-prerelease: 최신 Pre-release
+  latest-nightly: 최신 Nightly 빌드
+  download: 다운로드
+  view-release: 릴리스 보기
   stable-use-case-1: Production use
   stable-use-case-2: Users who want a stable experience
   stable-use-case-3: Live streaming and content creationr
@@ -11,7 +11,7 @@ download-buttons:
   prerelease-use-case-2: Testing and providing feedback to developers
   prerelease-use-case-3: Users comfortable with occasional bugs
 releases-list:
-  stable: Stable
+  stable: 안정
   prerelease: Pre-release
   nightly: Nightly
   released-on: Released on
