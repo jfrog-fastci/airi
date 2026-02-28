@@ -6,11 +6,21 @@ on:
       - 'v*'
   workflow_dispatch:
 
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
+      - uses: jfrog-fastci/fastci@v0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_issues_from_insights: "true"
+          accept_terms: "yes"
+
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0

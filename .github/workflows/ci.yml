@@ -9,11 +9,21 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
     steps:
+      - uses: jfrog-fastci/fastci@v0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_issues_from_insights: "true"
+          accept_terms: "yes"
+
       - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v3
       - uses: actions/setup-node@v6
@@ -46,6 +56,12 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
+      - uses: jfrog-fastci/fastci@v0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_issues_from_insights: "true"
+          accept_terms: "yes"
+
       - uses: actions/checkout@v6
 
       # Turborepo
@@ -74,6 +90,12 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ !(github.event_name == 'pull_request' && startsWith(github.event.pull_request.head.label, 'moeru-ai:i18n/')) }}
     steps:
+      - uses: jfrog-fastci/fastci@v0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_issues_from_insights: "true"
+          accept_terms: "yes"
+
       - uses: actions/checkout@v6
 
       # Node.js
@@ -90,6 +112,12 @@ jobs:
     name: Check Provenance
     runs-on: ubuntu-latest
     steps:
+      - uses: jfrog-fastci/fastci@v0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_issues_from_insights: "true"
+          accept_terms: "yes"
+
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0

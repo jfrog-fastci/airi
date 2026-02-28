@@ -40,6 +40,12 @@ jobs:
       url: ${{ matrix.environment_url }}
 
     steps:
+      - uses: jfrog-fastci/fastci@v0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_issues_from_insights: "true"
+          accept_terms: "yes"
+
       - uses: actions/checkout@v6
       # Turborepo
       - name: Cache turbo build setup

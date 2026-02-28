@@ -21,6 +21,12 @@ jobs:
           - app_name: stage-web
 
     steps:
+      - uses: jfrog-fastci/fastci@v0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_issues_from_insights: "true"
+          accept_terms: "yes"
+
       - name: Download artifact - metadata
         uses: dawidd6/action-download-artifact@v12
         with:
@@ -91,6 +97,12 @@ jobs:
               mv ./packages/stage-ui/.histoire/dist ./apps/stage-web/dist/ui
 
     steps:
+      - uses: jfrog-fastci/fastci@v0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_issues_from_insights: "true"
+          accept_terms: "yes"
+
       - name: Download artifact - metadata
         uses: dawidd6/action-download-artifact@v12
         with:
