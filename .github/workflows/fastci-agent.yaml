@@ -1,8 +1,9 @@
 name: FastCI Agent
 
 on:
-  issues:
-    types: [opened, reopened]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
 
 permissions:
   contents: write
@@ -11,9 +12,14 @@ permissions:
 
 jobs:
   attempt-fix:
-    if: contains(github.event.issue.labels.*.name, 'fastci-insight') || startsWith(github.event.issue.title, '[FastCI]')
     runs-on: ubuntu-latest
     steps:
+      - uses: jfrog-fastci/fastci@v0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_issues_from_insights: "true"
+          accept_terms: "yes"
+
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0

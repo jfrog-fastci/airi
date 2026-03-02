@@ -1,9 +1,13 @@
 name: Cloudflare Workers
 
 on:
-  push:
-    branches:
-      - 'main'
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+permissions:
+  contents: read
+  issues: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -15,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      issues: write
       deployments: write
 
     strategy:

@@ -1,9 +1,9 @@
 name: Release Crates
 
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
 
 env:
   STORE_PATH: ''
@@ -20,6 +20,12 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
+      - uses: jfrog-fastci/fastci@v0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_issues_from_insights: "true"
+          accept_terms: "yes"
+
       - name: Checkout
         uses: actions/checkout@v6
         with:

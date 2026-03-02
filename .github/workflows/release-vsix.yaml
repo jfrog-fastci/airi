@@ -1,10 +1,9 @@
 name: Release VSCE & OVSX
 
 on:
-  push:
-    tags:
-      - '@proj-airi/airi-plugin-vscode@v*'
-      - 'v*'
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
 
 permissions:
   issues: write

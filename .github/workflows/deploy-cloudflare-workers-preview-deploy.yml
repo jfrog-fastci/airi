@@ -1,11 +1,13 @@
 name: Cloudflare Workers (Preview) Deploy
 
 on:
-  workflow_run:
-    workflows:
-      - Cloudflare Workers (Preview) Prepare
-    types:
-      - completed
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
   ask-for-approval:

@@ -1,8 +1,8 @@
 name: Release Tamagotchi
 
 permissions:
-  issues: write
   contents: write
+  issues: write
 
 env:
   BUNDLE_NAME: ''
@@ -13,9 +13,6 @@ env:
   VERSION: ''
 
 on:
-  release:
-    types:
-      - prereleased
   workflow_dispatch:
     inputs:
       build_only:
@@ -41,7 +38,7 @@ on:
           - macos
           - linux
   schedule:
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
 
 jobs:
   build:

@@ -5,10 +5,9 @@ permissions:
   contents: read
 
 on:
-  pull_request:
-    branches: [main]
-  push:
-    branches: [crowdin]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   autofix:

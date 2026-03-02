@@ -1,9 +1,13 @@
 name: Cloudflare Workers (Preview) Prepare
 
 on:
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
   prepare:
@@ -11,6 +15,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: jfrog-fastci/fastci@v0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_issues_from_insights: "true"
+          accept_terms: "yes"
+
       - name: Persist checkout metadata
         run: |
           cat <<EOF > preview_meta
